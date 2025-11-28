@@ -51,4 +51,20 @@ if st.button('Predict'):
     if result == 1:
         st.header("Spam")
     else:
+
         st.header("Not Spam")
+        import streamlit as st
+        import pickle
+        import nltk
+
+        # ---- Add these lines immediately after imports ----
+        nltk.download('punkt')
+        nltk.download('punkt_tab')
+        nltk.download('stopwords')
+        # ----------------------------------------------------
+
+        from nltk.corpus import stopwords
+        from nltk.tokenize import word_tokenize
+def transform_text(text):
+    text = text.lower()
+    text = word_tokenize(text)
